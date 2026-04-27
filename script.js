@@ -25,3 +25,17 @@ function generatePassword() {
 
     document.getElementById("password").value = password;
 }
+
+function copyPassword() {
+    let passwordField = document.getElementById("password");
+
+    if (passwordField.value === "") {
+        alert("No password to copy!");
+        return;
+    }
+
+    passwordField.select();
+    document.execCommand("copy");
+
+    alert("Password copied!");
+}
